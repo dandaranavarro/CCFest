@@ -1,6 +1,6 @@
 <div class="container" style="height: 40% !important;">
 	<div class="col-md-12"
-		style="padding: 20px 40px 40px 40px; height: 100%; margin-bottom: 10px; border-radius: 4px; opacity: .9">
+		style="padding: 5px 40px 40px 40px; height: 100%; margin-bottom: 10px; border-radius: 2px; opacity: .9">
 		<div class="row">
 			<h1 class="col-sm-11" style="font-size: 30px">
 				<b>Bem-vindo ao HackFest do curso de Ciência da Computação</b>
@@ -15,23 +15,60 @@
 	</div>
 </div>
 
-<div class="container">
-	<div class="col-sm-7" style="padding: 10px 40px 40px 40px;">
+
+
+
+	<div class="container">
+	<div class="col-sm-7" style="padding: 1px 40px 40px 40px;">
 		<div class="row">
 			<h1 class="col-sm-11" style="font-size: 30px; margin-top:0px;margin-bottom:20px">
-				<b>Temas</b>
+				<b>Cadastre-se</b>
 			</h1>
 		</div>
-		<div id="principal-temas" style="height:184px !important;max-height:184px;overflow:auto" class="list-group">
-		  @for(tema <- Tema.values()){
-		  	<a href="#" class="list-group-item" data-id="@tema.getTipo()">@tema</a>
-		  }
-		</div>
+		
+		<div class="modal-body">
+				<form method="POST" class="form-horizontal" id="form-participar">
+					
+						 <div class="form-group">
+						    <label for="inputName3" class="col-sm-2 control-label">Nome</label>
+						    <div class="col-sm-10">
+						      <input type="email" class="form-control" id="inputEmail3" placeholder="Digite seu nome">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+						    <div class="col-sm-10">
+						      <input type="email" class="form-control" id="inputEmail3" placeholder="Digite seu email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
+						    <div class="col-sm-10">
+						      <input type="password" class="form-control" id="inputPassword3" placeholder="Digite sua senha">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <div class="col-sm-offset-2 col-sm-10">
+						      <div class="checkbox">
+						        <label>
+						          <input type="checkbox"> Remember me
+						        </label>
+						      </div>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <div class="col-sm-offset-2 col-sm-10">
+						      <button type="submit" class="btn btn-default" onclick="mySwiper.swipeTo(2);">Cadastrar</button>
+						   
+						      <button type="submit" class="btn btn-success" onclick="mySwiper.swipeTo(2);" data-target="#loginModal">Já sou cadastrado(a)</button>
+						    </div>
+  						</div>
+	
+					
+				</form>
+				
+			</div>
+		
 	</div>
-	<div class="col-sm-3 div-btn-big-container">
-		<button class="btn btn-danger col-sm-12" style="margin-top:9px" data-toggle="modal" data-target="#loginModal" onclick="mySwiper.swipeTo(2);"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Crie um evento</button>
-		<br><button class="btn btn-success col-sm-12" style="margin-top:20px" onclick="mySwiper.swipeTo(1);"><i class="fa fa-eye"></i>&nbsp;&nbsp;Veja todos eventos</button>
-	</div>
-</div>
-
-
+	</div>	
+		
