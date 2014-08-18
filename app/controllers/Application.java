@@ -118,16 +118,7 @@ public class Application extends Controller {
 			calendar = Calendar.getInstance();
 			calendar.add(Calendar.DAY_OF_WEEK, 5);
 
-			evento = new Evento("Minicurso Arduino", "Evento destinado a alunos de LOAC, caso sobre vagas iremos disponibilizar em breve", calendar.getTime(), temas);
-			eventos.add(evento);
-			criarEvento(evento);
-	
-			temas = new ArrayList<Tema>();
-			temas.add(Tema.ELETRONICA);
-			temas.add(Tema.ARDUINO);
 			
-			calendar = Calendar.getInstance();
-			calendar.add(Calendar.DAY_OF_WEEK, 21);
 
 			evento = new Evento("Curto circuito", "Evento sobre circuitos eletrônicos, venha dar curto em seus circuitos também!!", calendar.getTime(), temas);
 			eventos.add(evento);
