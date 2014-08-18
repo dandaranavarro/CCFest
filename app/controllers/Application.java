@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
+import views.html.index;
 import models.Evento;
 import models.Participante;
 import models.Tema;
@@ -15,7 +16,7 @@ import models.exceptions.PessoaInvalidaException;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.index;
+
 
 public class Application extends Controller {
 	
@@ -149,7 +150,7 @@ public class Application extends Controller {
 			criarEvento(evento);
 			
 			return eventos;
-		} catch (EventoInvalidoException E) {
+		} catch (EventoInvalidoException e) {
 			return null;
 		}
 	}
@@ -177,7 +178,7 @@ public class Application extends Controller {
 			criarParticipacao(new Participante("Érico Albuquerque", "erico_albuquerque@mail.com", eventos.get(rnd.nextInt(TRES))));
 			criarParticipacao(new Participante("Érico Albuquerque", "erico_albuquerque@mail.com", eventos.get(rnd.nextInt(TRES))));
 			criarParticipacao(new Participante("Tairine Reis", "tairine_reis@mail.com", eventos.get(rnd.nextInt(TRES))));
-		} catch (PessoaInvalidaException _) { }
+		} catch (PessoaInvalidaException e) { }
 	}
 	
 	@Transactional

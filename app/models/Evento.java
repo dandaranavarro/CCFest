@@ -22,6 +22,8 @@ import play.data.validation.Constraints.Required;
 
 @Entity
 public class Evento {
+	
+	private static final int TAMANHO = 450, QUARENTA = 40, ZERO=0; 
 
 	@Id
 	@GeneratedValue
@@ -33,7 +35,7 @@ public class Evento {
 
 	@Required
 	@MaxLength(value = 450)
-	@Column(name = "CONTENT", length = 450)
+	@Column(name = "CONTENT", length = TAMANHO)
 	private String descricao;
 
 	@Temporal(value = TemporalType.DATE)
@@ -53,10 +55,10 @@ public class Evento {
 
 	public Evento(String titulo, String descricao, Date data, List<Tema> temas)
 			throws EventoInvalidoException {
-		setTitulo(titulo);
-		setDescricao(descricao);
-		setData(data);
-		setTemas(temas);
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.data = data;
+		this.temas = temas;
 	}
 
 	public String getTitulo() {
@@ -86,7 +88,7 @@ public class Evento {
 	public void setTitulo(String titulo) throws EventoInvalidoException {
 		if (titulo == null)
 			throw new EventoInvalidoException("Parametro nulo");
-		if (titulo.length() > 40)
+		if (titulo.length() > QUARENTA)
 			throw new EventoInvalidoException("Título longo");
 		this.titulo = titulo;
 	}
@@ -94,7 +96,7 @@ public class Evento {
 	public void setDescricao(String descricao) throws EventoInvalidoException {
 		if (descricao == null)
 			throw new EventoInvalidoException("Parametro nulo");
-		if (descricao.length() > 450)
+		if (descricao.length() > TAMANHO)
 			throw new EventoInvalidoException("Descrição longa");
 		this.descricao = descricao;
 	}
@@ -102,7 +104,7 @@ public class Evento {
 	public void setData(Date data) throws EventoInvalidoException {
 		if (data == null)
 			throw new EventoInvalidoException("Parametro nulo");
-		if (data.compareTo(new Date()) < 0)
+		if (data.compareTo(new Date()) < ZERO)
 			throw new EventoInvalidoException("Data inválida");
 		this.data = data;
 	}
@@ -110,7 +112,7 @@ public class Evento {
 	public void setTemas(List<Tema> temas) throws EventoInvalidoException {
 		if (temas == null)
 			throw new EventoInvalidoException("Parametro nulo");
-		if (temas.size() == 0)
+		if (temas.size() == ZERO)
 			throw new EventoInvalidoException("Nenhum tema");
 		this.temas = temas;
 	}
