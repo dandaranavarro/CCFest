@@ -1,3 +1,4 @@
+//oioi
 package models;
 
 import java.util.ArrayList;
@@ -30,11 +31,11 @@ public class Evento {
 	private long id;
 
 	@Required
-	@MaxLength(value = 40)
+	@MaxLength(value = QUARENTA)
 	private String titulo;
 
 	@Required
-	@MaxLength(value = 450)
+	@MaxLength(value = TAMANHO)
 	@Column(name = "CONTENT", length = TAMANHO)
 	private String descricao;
 
@@ -86,34 +87,38 @@ public class Evento {
 	}
 
 	public void setTitulo(String titulo) throws EventoInvalidoException {
-		if (titulo == null)
+		if (titulo == null){
 			throw new EventoInvalidoException("Parametro nulo");
-		if (titulo.length() > QUARENTA)
+		}if (titulo.length() > QUARENTA){
 			throw new EventoInvalidoException("Título longo");
+		}
 		this.titulo = titulo;
 	}
 
 	public void setDescricao(String descricao) throws EventoInvalidoException {
-		if (descricao == null)
+		if (descricao == null){
 			throw new EventoInvalidoException("Parametro nulo");
-		if (descricao.length() > TAMANHO)
+		}if (descricao.length() > TAMANHO){
 			throw new EventoInvalidoException("Descrição longa");
+		}
 		this.descricao = descricao;
 	}
 
 	public void setData(Date data) throws EventoInvalidoException {
-		if (data == null)
+		if (data == null){
 			throw new EventoInvalidoException("Parametro nulo");
-		if (data.compareTo(new Date()) < ZERO)
+		}if (data.compareTo(new Date()) < ZERO){
 			throw new EventoInvalidoException("Data inválida");
+		}
 		this.data = data;
 	}
 
 	public void setTemas(List<Tema> temas) throws EventoInvalidoException {
-		if (temas == null)
+		if (temas == null){
 			throw new EventoInvalidoException("Parametro nulo");
-		if (temas.size() == ZERO)
+		}if (temas.size() == ZERO){
 			throw new EventoInvalidoException("Nenhum tema");
+		}
 		this.temas = temas;
 	}
 }

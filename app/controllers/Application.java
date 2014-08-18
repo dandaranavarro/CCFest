@@ -24,7 +24,7 @@ public class Application extends Controller {
 	private static GenericDAO dao = new GenericDAOImpl();
 	private static final int DIA_SETE = 7,DIA_DOIS=2, DIA_TRES = 3, DIA_DOZE = 12,
 			DIA_DEZESSETE = 17, DIA_CINCO = 5, DIA_QUINZE = 15,
-			DIA_VINTE_UM = 21, DIA_OITO = 8, TRES = 3;
+			VINTE_UM = 21, DIA_OITO = 8, TRES = 3;
 
 	@Transactional
     public static Result index(){

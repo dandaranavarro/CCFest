@@ -40,9 +40,9 @@ public class Participante {
 
 	public Participante(String nome, String email, Evento evento)
 			throws PessoaInvalidaException {
-		setNome(nome);
-		setEmail(email);
-		setEvento(evento);
+		this.nome= nome;
+		this.email =email;
+		this.evento = evento;
 	}
 
 	public String getNome() {
@@ -50,10 +50,11 @@ public class Participante {
 	}
 
 	public void setNome(String nome) throws PessoaInvalidaException {
-		if (nome == null)
+		if (nome == null){
 			throw new PessoaInvalidaException("Parametro nulo");
-		if (nome.length() > SETENTA)
+		}if (nome.length() > SETENTA){
 			throw new PessoaInvalidaException("Nome longo");
+		}
 		this.nome = nome;
 	}
 
@@ -62,13 +63,13 @@ public class Participante {
 	}
 
 	public void setEmail(String email) throws PessoaInvalidaException {
-		if (email == null)
+		if (email == null){
 			throw new PessoaInvalidaException("Parametro nulo");
-		if (!email.matches(EMAIL_PATTERN))
+		}if (!email.matches(EMAIL_PATTERN)){
 			throw new PessoaInvalidaException("Email inválido");
-		if (email.length() > SETENTA)
+		}if (email.length() > SETENTA){
 			throw new PessoaInvalidaException("Email longo");
-		this.email = email;
+		}this.email = email;
 	}
 
 	public Evento getEvento() {
@@ -76,8 +77,8 @@ public class Participante {
 	}
 
 	public void setEvento(Evento evento) throws PessoaInvalidaException {
-		if (evento == null)
+		if (evento == null){
 			throw new PessoaInvalidaException("Parametro nulo");
-		this.evento = evento;
+		}this.evento = evento;
 	}
 }
