@@ -62,7 +62,7 @@ public class Application extends Controller {
 			calendar = Calendar.getInstance();
 			calendar.add(Calendar.DAY_OF_WEEK, 3);
 
-			evento = new Evento("Luta de robôs", "Traga seu robô feito em arduino e traga para competir com outros.", calendar.getTime(), temas);
+			evento = new Evento("Luta de robôs", "Traga seu robô feito em arduino para competir com outros.", calendar.getTime(), temas);
 			eventos.add(evento);
 			criarEvento(evento);
 	
